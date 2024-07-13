@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./component/Home";
+import University from "./component/University";
 
 function App() {
   return (
