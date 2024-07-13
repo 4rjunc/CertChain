@@ -10,6 +10,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract Certificate is ERC721, ERC721URIStorage, Ownable {
 
   uint256 private _currentTokenId = 0;
+  uint256 private _tokenID = 0; 
   mapping(uint256 => string) private _tokenIPFSHashes;
   mapping(string => uint8) private existingURIs;
 
@@ -26,12 +27,17 @@ contract Certificate is ERC721, ERC721URIStorage, Ownable {
         require(existingURIs[ipfsHash] != 1, "Certificate already minted!");
 
         uint256 tokenId = _currentTokenId;
+        _tokenID = tokenId;
         _currentTokenId++;
 
         _safeMint(student, tokenId);
         _setTokenURI(tokenId, ipfsHash);
         _tokenIPFSHashes[tokenId] = ipfsHash;
         existingURIs[ipfsHash] = 1;
+    }
+
+    function tokenIDFetch() public view returns (uint256) {
+        return _tokenID;
     }
 
     function supportsInterface(bytes4 interfaceId) public view override(ERC721, ERC721URIStorage) returns (bool) {
