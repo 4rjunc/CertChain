@@ -16,6 +16,11 @@ contract Certificate is ERC721, ERC721URIStorage, Ownable {
   constructor() ERC721("Certificate", "CERT") Ownable(msg.sender) {}
 
 
+  function _baseURI() internal pure override returns (string memory) {
+        return "ipfs://";
+    }
+
+
   function mintCertificate(address student, string memory ipfsHash) public onlyOwner {
         require(bytes(ipfsHash).length > 0, "IPFS hash cannot be empty");
         require(existingURIs[ipfsHash] != 1, "Certificate already minted!");
