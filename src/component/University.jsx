@@ -102,7 +102,12 @@ const University = () => {
           />
         </Box>
         <Box className="d-flex justify-content-center">
-          <Button variant="contained" color="primary" type="submit">
+          <Button
+            variant="contained"
+            className="rounded-3"
+            color="success"
+            type="submit"
+          >
             Submit
           </Button>
         </Box>
