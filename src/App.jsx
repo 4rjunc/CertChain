@@ -5,7 +5,6 @@ function App() {
   return (
     <>
       <div className="bg-white">
-        <p>Aisu</p>
       </div>
       <Home />
     </>
