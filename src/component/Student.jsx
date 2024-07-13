@@ -2,14 +2,12 @@ import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { Box, Button } from "@mui/material";
 
-const University = () => {
+const Student = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    dob: "",
-    marks: "",
-    attendance: "",
-    course: "",
-    wallet: "",
+    tokenid: "",
+    issuerAC: "",
+    ownerAC: "",
+    IPFS: "",
   });
 
   const handleChange = (e) => {
@@ -45,59 +43,42 @@ const University = () => {
       >
         <Box className="d-flex gap-5">
           <TextField
-            id="name"
-            label="Name"
+            id="tokenid"
+            label="Token ID"
             variant="standard"
             fullWidth
-            value={formData.name}
-            onChange={handleChange}
-          />
-          <TextField
-            id="dob"
-            label="Date Of Birth"
-            type="date"
-            variant="standard"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            fullWidth
-            value={formData.dob}
+            value={formData.tokenid}
             onChange={handleChange}
           />
         </Box>
         <Box className="d-flex gap-5">
           <TextField
-            id="marks"
-            label="Marks"
+            id="issuerAC"
+            label="Issuer account address"
             variant="standard"
             fullWidth
-            value={formData.marks}
+            value={formData.issuerAC}
             onChange={handleChange}
           />
+        </Box>
+        <Box>
+          {" "}
           <TextField
-            id="attendance"
-            label="Attendance"
+            id="ownerAC"
+            label="Owner account address"
             variant="standard"
             fullWidth
-            value={formData.attendance}
+            value={formData.ownerAC}
             onChange={handleChange}
           />
         </Box>
         <Box className="d-flex gap-5">
           <TextField
-            id="course"
-            label="Course"
+            id="IPFS"
+            label="IPFS Hash"
             variant="standard"
             fullWidth
-            value={formData.course}
-            onChange={handleChange}
-          />
-          <TextField
-            id="wallet"
-            label="Student Wallet Address"
-            variant="standard"
-            fullWidth
-            value={formData.wallet}
+            value={formData.IPFS}
             onChange={handleChange}
           />
         </Box>
@@ -108,7 +89,7 @@ const University = () => {
             color="success"
             type="submit"
           >
-            🏅 Issue Certificate
+            ✅ Verify
           </Button>
         </Box>
       </Box>
@@ -116,4 +97,4 @@ const University = () => {
   );
 };
 
-export default University;
+export default Student;
