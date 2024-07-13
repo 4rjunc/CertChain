@@ -50,6 +50,7 @@ const Student = () => {
               fullWidth
               value={formData.tokenid}
               onChange={handleChange}
+              sx={{ marginBottom: '16px' }}
             />
           </Box>
           <Box className="d-flex gap-5">
@@ -60,6 +61,7 @@ const Student = () => {
               fullWidth
               value={formData.issuerAC}
               onChange={handleChange}
+              sx={{ marginBottom: '16px' }}
             />
           </Box>
           <Box>
@@ -71,6 +73,7 @@ const Student = () => {
               fullWidth
               value={formData.ownerAC}
               onChange={handleChange}
+              sx={{ marginBottom: '16px' }}
             />
           </Box>
           <Box className="d-flex gap-5">
@@ -81,6 +84,7 @@ const Student = () => {
               fullWidth
               value={formData.IPFS}
               onChange={handleChange}
+              sx={{ marginBottom: '16px' }}
             />
           </Box>
           <Box className="d-flex justify-content-center">
