@@ -1,8 +1,8 @@
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Grid, Link } from "@mui/material";
 
-const Student = () => {
+const Student = ({ onSwitchToAdmin }) => {
   const [formData, setFormData] = useState({
     tokenid: "",
     issuerAC: "",
@@ -41,60 +41,61 @@ const Student = () => {
         autoComplete="off"
         onSubmit={handleSubmit}
       >
-        <div className="box">
-          <Box className="d-flex gap-5">
-            <TextField
-              id="tokenid"
-              label="Token ID"
-              variant="standard"
-              fullWidth
-              value={formData.tokenid}
-              onChange={handleChange}
-            />
-          </Box>
-          <Box className="d-flex gap-5">
-            <TextField
-              id="issuerAC"
-              label="Issuer account address"
-              variant="standard"
-              fullWidth
-              value={formData.issuerAC}
-              onChange={handleChange}
-            />
-          </Box>
-          <Box>
-            {" "}
-            <TextField
-              id="ownerAC"
-              label="Owner account address"
-              variant="standard"
-              fullWidth
-              value={formData.ownerAC}
-              onChange={handleChange}
-            />
-          </Box>
-          <Box className="d-flex gap-5">
-            <TextField
-              id="IPFS"
-              label="IPFS Hash"
-              variant="standard"
-              fullWidth
-              value={formData.IPFS}
-              onChange={handleChange}
-            />
-          </Box>
-          <Box className="d-flex justify-content-center">
-            <Button
-              variant="contained"
-              className="rounded-3"
-              color="success"
-              type="submit"
-              sx={{marginTop : '6%'}}
-            >
-              ✅ Verify
-            </Button>
-          </Box>
-        </div>  
+        <Box className="d-flex gap-5">
+          <TextField
+            id="tokenid"
+            label="Token ID"
+            variant="standard"
+            fullWidth
+            value={formData.tokenid}
+            onChange={handleChange}
+          />
+        </Box>
+        <Box className="d-flex gap-5">
+          <TextField
+            id="issuerAC"
+            label="Issuer account address"
+            variant="standard"
+            fullWidth
+            value={formData.issuerAC}
+            onChange={handleChange}
+          />
+        </Box>
+        <Box>
+          <TextField
+            id="ownerAC"
+            label="Owner account address"
+            variant="standard"
+            fullWidth
+            value={formData.ownerAC}
+            onChange={handleChange}
+          />
+        </Box>
+        <Box className="d-flex gap-5">
+          <TextField
+            id="IPFS"
+            label="IPFS Hash"
+            variant="standard"
+            fullWidth
+            value={formData.IPFS}
+            onChange={handleChange}
+          />
+        </Box>
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          sx={{ mt: 3, mb: 2 }}
+        >
+          Verify
+        </Button>
+        <Grid container>
+          <Grid item xs>
+            <Link href="#" variant="body2" onClick={onSwitchToAdmin}>
+              Switch to Administrator
+            </Link>
+          </Grid>
+        </Grid>
       </Box>
     </Box>
   );

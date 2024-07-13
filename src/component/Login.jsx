@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Box, Avatar, Typography, TextField, Button, Grid, Link } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
-const Login = () => {
+const Login = ({ onLogin, onShowStudentForm, onSubmit }) => {
+  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSubmit(email, password);
+  };
+
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -19,7 +28,7 @@ const Login = () => {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <Box component="form" noValidate sx={{ mt: 1 }}>
+        <Box component="form" noValidate sx={{ mt: 1 }} onSubmit={handleSubmit}>
           <TextField
             margin="normal"
             required
@@ -29,6 +38,8 @@ const Login = () => {
             name="email"
             autoComplete="email"
             autoFocus
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
             margin="normal"
@@ -39,19 +50,22 @@ const Login = () => {
             type="password"
             id="password"
             autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <Button
             type="submit"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
+            onClick={onSubmit}
           >
             Sign In
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
+              <Link href="#" variant="body2" onClick={onShowStudentForm}>
+                Student form
               </Link>
             </Grid>
             <Grid item>
