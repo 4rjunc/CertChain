@@ -27,92 +27,97 @@ const University = () => {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh", // Full viewport height to center vertically
-      }}
-    >
+    
       <Box
-        component="form"
-        className="d-flex flex-column gap-4"
-        sx={{ width: "50%" }}
-        noValidate
-        autoComplete="off"
-        onSubmit={handleSubmit}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh", // Full viewport height to center vertically
+        }}
       >
-        <Box className="d-flex gap-5">
-          <TextField
-            id="name"
-            label="Name"
-            variant="standard"
-            fullWidth
-            value={formData.name}
-            onChange={handleChange}
-          />
-          <TextField
-            id="dob"
-            label="Date Of Birth"
-            type="date"
-            variant="standard"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            fullWidth
-            value={formData.dob}
-            onChange={handleChange}
-          />
-        </Box>
-        <Box className="d-flex gap-5">
-          <TextField
-            id="marks"
-            label="Marks"
-            variant="standard"
-            fullWidth
-            value={formData.marks}
-            onChange={handleChange}
-          />
-          <TextField
-            id="attendance"
-            label="Attendance"
-            variant="standard"
-            fullWidth
-            value={formData.attendance}
-            onChange={handleChange}
-          />
-        </Box>
-        <Box className="d-flex gap-5">
-          <TextField
-            id="course"
-            label="Course"
-            variant="standard"
-            fullWidth
-            value={formData.course}
-            onChange={handleChange}
-          />
-          <TextField
-            id="wallet"
-            label="Student Wallet Address"
-            variant="standard"
-            fullWidth
-            value={formData.wallet}
-            onChange={handleChange}
-          />
-        </Box>
-        <Box className="d-flex justify-content-center">
-          <Button
-            variant="contained"
-            className="rounded-3"
-            color="success"
-            type="submit"
-          >
-            🏅 Issue Certificate
-          </Button>
+        <Box
+          component="form"
+          className="d-flex flex-column gap-4"
+          sx={{ width: "50%" }}
+          noValidate
+          autoComplete="off"
+          onSubmit={handleSubmit}
+        >
+          <div className="box">
+            <Box className="d-flex gap-5">
+              <TextField
+                id="name"
+                label="Name"
+                variant="standard"
+                fullWidth
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <TextField
+                id="dob"
+                label="Date Of Birth"
+                type="date"
+                variant="standard"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                fullWidth
+                value={formData.dob}
+                onChange={handleChange}
+              />
+            </Box>
+            <Box className="d-flex gap-5">
+              <TextField
+                id="marks"
+                label="Marks"
+                variant="standard"
+                fullWidth
+                value={formData.marks}
+                onChange={handleChange}
+              />
+              <TextField
+                id="attendance"
+                label="Attendance"
+                variant="standard"
+                fullWidth
+                value={formData.attendance}
+                onChange={handleChange}
+              />
+            </Box>
+            <Box className="d-flex gap-5">
+              <TextField
+                id="course"
+                label="Course"
+                variant="standard"
+                fullWidth
+                value={formData.course}
+                onChange={handleChange}
+              />
+              <TextField
+                id="wallet"
+                label="Student Wallet Address"
+                variant="standard"
+                fullWidth
+                value={formData.wallet}
+                onChange={handleChange}
+              />
+            </Box>
+            <Box className="d-flex justify-content-center">
+              <Button
+                variant="contained"
+                className="rounded-3"
+                color="success"
+                type="submit"
+                sx={{marginTop : '6%'}}
+              >
+                🏅 Issue Certificate
+              </Button>
+            </Box>
+          </div>  
         </Box>
       </Box>
-    </Box>
+     
   );
 };
 

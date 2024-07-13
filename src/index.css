@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color: rgba(255, 255, 255, 0.87);
-
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -13,4 +13,16 @@
 
 .main {
   background-color: red;
+}
+
+body {
+  background-color: rgb(230, 227, 224);
+}
+
+.box {
+  background-color: white;
+  padding: 6%;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
+  border-radius: 10px 10px 10px 10px;
+  margin-bottom: 2px;         
 }
