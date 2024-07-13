@@ -1,8 +1,8 @@
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Grid, Link } from "@mui/material";
 
-const Student = () => {
+const Student = ({ onSwitchToAdmin }) => {
   const [formData, setFormData] = useState({
     tokenid: "",
     issuerAC: "",
@@ -41,6 +41,7 @@ const Student = () => {
         autoComplete="off"
         onSubmit={handleSubmit}
       >
+        
         <div className="box">
           <Box className="d-flex gap-5">
             <TextField
@@ -98,6 +99,13 @@ const Student = () => {
               ✅ Verify
             </Button>
           </Box>
+          <Grid container>
+          <Grid item xs>
+            <Link href="#" variant="body2" onClick={onSwitchToAdmin}>
+              Switch to Administrator
+            </Link>
+          </Grid>
+        </Grid>
         </div>  
       </Box>
     </Box>
