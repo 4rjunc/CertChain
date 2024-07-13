@@ -41,57 +41,60 @@ const Student = () => {
         autoComplete="off"
         onSubmit={handleSubmit}
       >
-        <Box className="d-flex gap-5">
-          <TextField
-            id="tokenid"
-            label="Token ID"
-            variant="standard"
-            fullWidth
-            value={formData.tokenid}
-            onChange={handleChange}
-          />
-        </Box>
-        <Box className="d-flex gap-5">
-          <TextField
-            id="issuerAC"
-            label="Issuer account address"
-            variant="standard"
-            fullWidth
-            value={formData.issuerAC}
-            onChange={handleChange}
-          />
-        </Box>
-        <Box>
-          {" "}
-          <TextField
-            id="ownerAC"
-            label="Owner account address"
-            variant="standard"
-            fullWidth
-            value={formData.ownerAC}
-            onChange={handleChange}
-          />
-        </Box>
-        <Box className="d-flex gap-5">
-          <TextField
-            id="IPFS"
-            label="IPFS Hash"
-            variant="standard"
-            fullWidth
-            value={formData.IPFS}
-            onChange={handleChange}
-          />
-        </Box>
-        <Box className="d-flex justify-content-center">
-          <Button
-            variant="contained"
-            className="rounded-3"
-            color="success"
-            type="submit"
-          >
-            ✅ Verify
-          </Button>
-        </Box>
+        <div className="box">
+          <Box className="d-flex gap-5">
+            <TextField
+              id="tokenid"
+              label="Token ID"
+              variant="standard"
+              fullWidth
+              value={formData.tokenid}
+              onChange={handleChange}
+            />
+          </Box>
+          <Box className="d-flex gap-5">
+            <TextField
+              id="issuerAC"
+              label="Issuer account address"
+              variant="standard"
+              fullWidth
+              value={formData.issuerAC}
+              onChange={handleChange}
+            />
+          </Box>
+          <Box>
+            {" "}
+            <TextField
+              id="ownerAC"
+              label="Owner account address"
+              variant="standard"
+              fullWidth
+              value={formData.ownerAC}
+              onChange={handleChange}
+            />
+          </Box>
+          <Box className="d-flex gap-5">
+            <TextField
+              id="IPFS"
+              label="IPFS Hash"
+              variant="standard"
+              fullWidth
+              value={formData.IPFS}
+              onChange={handleChange}
+            />
+          </Box>
+          <Box className="d-flex justify-content-center">
+            <Button
+              variant="contained"
+              className="rounded-3"
+              color="success"
+              type="submit"
+              sx={{marginTop : '6%'}}
+            >
+              ✅ Verify
+            </Button>
+          </Box>
+        </div>  
       </Box>
     </Box>
   );
