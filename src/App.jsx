@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./component/Home";
 import University from "./component/University";
+import { Typography } from '@mui/material'; 
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -17,6 +18,12 @@ function App() {
 
   return (
     <>
+     <Typography 
+     variant="h2" 
+     component="div" 
+     sx={{ textAlign: 'center', mt: 4, pt: 4}}>
+    CertChain
+  </Typography>
       {!isAuthenticated ? (
         <Home onSubmit={handleLogin} />
       ) : (

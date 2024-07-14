@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Caveat:wght@400..700&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Signika+Negative:wght@300..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+*{
+  font-family:  'Archivo','Signika Negative', 'sans-serif' !important;
+}
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Archivo', 'Signika Negative', 'sans-serif' !important;
   line-height: 1.5;
   font-weight: 400;
 
@@ -17,6 +21,8 @@
 
 body {
   background-color: rgb(230, 227, 224);
+  margin: 0;
+  height: 100vh;
 }
 
 .box {
@@ -24,5 +30,6 @@ body {
   padding: 6%;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.5);
   border-radius: 10px 10px 10px 10px;
-  margin-bottom: 2px;         
+  margin-bottom: 200px;   
+      
 }
