@@ -1,9 +1,10 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import TextField from "@mui/material/TextField";
 import { Box, Button, Typography } from "@mui/material";
 import html2canvas from "html2canvas";
+import QRCodeGenerator from "./Qr"; // Import QRCodeGenerator if needed for reference
 
-const University = () => {
+const University = ({ onSubmit }) => { // Accept onSubmit as a prop
   const [formData, setFormData] = useState({
     name: "",
     dob: "",
@@ -14,7 +15,7 @@ const University = () => {
   });
 
   const [imgData, setImgData] = useState(null);
-  const [isSubmitted, setIsSubmitted] = useState(false); // New state for tracking submission
+  const [isSubmitted, setIsSubmitted] = useState(false); // State for tracking submission
   const certRef = useRef(null);
 
   const handleChange = (e) => {
@@ -36,21 +37,21 @@ const University = () => {
         const img = canvas.toDataURL("image/png");
         console.log("Image captured and converted to data URL: ", img);
         setImgData(img);
+        onSubmit(); // Call onSubmit prop to update state in App component
       } catch (error) {
         console.error("Error capturing the form:", error);
       }
     }
   };
 
-  // Download handler
-const handleDownload = () => {
-  if (imgData) {
-    const link = document.createElement("a");
-    link.href = imgData;
-    link.download = "certificate.png";
-    link.click();
-  }
-};
+  const handleDownload = () => {
+    if (imgData) {
+      const link = document.createElement("a");
+      link.href = imgData;
+      link.download = "certificate.png";
+      link.click();
+    }
+  };
 
   return (
     <>
