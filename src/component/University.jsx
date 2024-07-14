@@ -52,6 +52,20 @@ const handleDownload = () => {
   }
 };
 
+{/*const handleSaveAsPDF = () => {
+  if (certRef.current) {
+    html2canvas(certRef.current, { scale: 2 }).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'pt', 'a4');
+      const imgWidth = 794;
+      const imgHeight = 1123;
+
+      pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+      pdf.save('certificate.pdf');
+    });
+  }
+};*/}
+
   return (
     <>
       <Box
@@ -148,7 +162,7 @@ const handleDownload = () => {
         </Box>
       </Box>
 
-      {imgData && (
+      {/*{imgData && (
         <Box
           sx={{
             display: "flex",
@@ -169,63 +183,266 @@ const handleDownload = () => {
           >
             Download Certificate
           </Button>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={handleSaveAsPDF}
+          >
+            Save as PDF
+          </Button>
         </Box>
-      )}
-
+      )}*/}
       <Box
-        ref={certRef}
         sx={{
-          display: isSubmitted ? "block" : "none", // Show if the form has been submitted
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "800px",
-          height: "600px",
-          backgroundColor: "#fff",
-          padding: "20px",
-          border: "2px solid #000",
-          borderRadius: "10px",
+          backgroundColor: '#ffff2wf',
+          margin: '25%',
+          marginTop: '-6%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.5)',
+          borderRadius: '10px 10px 10px 10px',
+          marginBottom: '20%' ,
+          position: 'relative',
+          height: '100vh',
+          width: '50%'
         }}
       >
-        <Typography variant="h3" align="center" gutterBottom>
-          Certificate of Completion
-        </Typography>
-        <Typography variant="h5" align="center">
-          This is to certify that
-        </Typography>
-        <Typography variant="h4" align="center" sx={{ fontWeight: "bold" }}>
-          {formData.name}
-        </Typography>
-        <Typography variant="h5" align="center">
-          has successfully completed the program
-        </Typography>
-        <Typography variant="h4" align="center" sx={{ fontWeight: "bold" }}>
-          {formData.pgm}
-        </Typography>
-        <Typography variant="h5" align="center">
-          at
-        </Typography>
-        <Typography variant="h4" align="center" sx={{ fontWeight: "bold" }}>
-          {formData.college}
-        </Typography>
-        <Typography variant="h6" align="center">
-          Registration Number: {formData.reg}
-        </Typography>
-        <Typography variant="h6" align="center">
-          Date of Birth: {formData.dob}
-        </Typography>
-        <Typography variant="h6" align="center">
-          Student Wallet Address: {formData.wallet}
-        </Typography>
-        <Box sx={{ marginTop: "20px" }}>
-          <Typography variant="body1" align="center">
-            Issued by
+        <Box
+          ref={certRef}
+          sx={{
+            display: isSubmitted ? "block" : "none", // Show if the form has been submitted
+            width: "595px",
+            height: "842px",
+            backgroundColor: "white",
+            padding: "2% 2% 2% 2%",
+            border: "0px solid #000",
+            //borderRadius: "10px",
+          }}
+        >
+          <Typography 
+            variant="h4" 
+            align="center" 
+            gutterBottom 
+            sx={{ 
+              fontSize: '2rem', 
+              background: '#A7E6FF', 
+              padding: '1%', 
+              width: '100%', 
+              marginTop: '5%' 
+            }}
+          >
+            CERTIFICATE OF COMPLETION
           </Typography>
-          <Typography variant="h6" align="center" sx={{ fontWeight: "bold" }}>
-            [University Name]
+          <Typography 
+            variant="h5" 
+            align="center" 
+            sx={{ 
+              fontSize: '1.5rem', 
+              fontStyle: 'italic', 
+              marginTop: '6%'
+            }}
+          >
+            This is to certify that
           </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+
+            }}
+          >
+            <Box
+              sx={{
+                border: '0px solid',
+                background: '#FFF9D0',
+                display:'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: '2%',
+                paddingLeft: '1%',
+                paddingRight: '1%',
+                //borderRadius: '12%'
+              }}
+            >
+              <Typography 
+                variant="h4" 
+                align="center" 
+                sx={{ 
+                  fontWeight: "bold", 
+                  fontSize: '3rem', 
+                  fontStyle: 'arial', 
+                  marginTop: '5.5%', 
+                  marginBottom: '5.5%' 
+                }}
+              >
+                {formData.name}
+              </Typography>
+            </Box>
+          </Box>  
+          <Typography 
+            variant="h5" 
+            align="center" 
+            sx={{ 
+              fontSize: '1.5rem',
+              fontStyle: 'italic' 
+            }}
+          >
+            has successfully completed the programme
+          </Typography>
+          {/*<Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Box
+              sx={{
+                border: '0px solid',
+                background: '#FFF9D0',
+                display:'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: '2%',
+                paddingLeft: '1%',
+                paddingRight: '1%',
+                borderRadius: '12%'
+              }}
+            >*/}
+              <Typography 
+                variant="h4" 
+                align="center" 
+                sx={{ 
+                  fontWeight: "bold", 
+                  fontSize: '2rem',
+                  marginTop: '3.5%', 
+                  marginBottom: '3.5%'  
+                }}
+              >
+                {formData.pgm}
+              </Typography>
+            {/*</Box> 
+          </Box>*/}   
+          <Typography 
+            variant="h5" 
+            align="center" 
+            sx={{ 
+              fontSize: '1.5rem' 
+            }}
+          >
+            at
+          </Typography>
+          {/*<Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Box
+              sx={{
+                border: '0px solid',
+                background: '#FFF9D0',
+                display:'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: '2%',
+                paddingLeft: '1%',
+                paddingRight: '1%',
+                borderRadius: '12%'
+              }}
+            >*/}
+              <Typography 
+                variant="h4" 
+                align="center" 
+                sx={{ 
+                  fontWeight: "bold", 
+                  fontSize: '2rem',
+                  marginTop: '3.5%', 
+                  marginBottom: '7%'  
+                }}
+              >
+                {formData.college}
+              </Typography>
+            {/*</Box>
+          </Box>*/}    
+          <Typography 
+            variant="h6" 
+            align="center" 
+            sx={{ 
+              fontSize: '1.5rem',
+            }}
+          >
+            <Box component="span" sx={{ fontStyle: 'italic' }}>Registration Number :</Box> <Box component="span" sx={{ fontWeight: 'bold' }}>{formData.reg}</Box>
+          </Typography>
+          <Typography 
+            variant="h6" 
+            align="center" 
+            sx={{ 
+              fontSize: '1.5rem',
+            }}
+          >
+            <Box component="span" sx={{ fontStyle: 'italic' }}>Date of Birth :</Box> <Box component="span" sx={{ fontWeight: 'bold' }}>{formData.dob}</Box>
+          </Typography>
+          <Typography 
+            variant="h6" 
+            align="center" 
+            sx={{ 
+              fontSize: '1.5rem',
+            }}
+          >
+            <Box component="span" sx={{ fontStyle: 'italic' }}>Student Wallet Address:</Box> <Box component="span" sx={{ fontWeight: 'bold' }}>{formData.wallet}</Box>
+          </Typography>
+          <Box sx={{ marginTop: "20px" }}>
+            <Typography 
+              variant="body1" 
+              align="center" 
+              sx={{ 
+                fontSize: '1.5rem',
+                marginTop: '8%',
+                marginBottom: '1.5%',
+                fontStyle: 'italic'
+              }}
+            >
+              Issued by
+            </Typography>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <Box
+                sx={{
+                  border: '0px solid',
+                  background: '#FFF9D0',
+                  display:'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  borderRadius: '2%',
+                  paddingLeft: '1%',
+                  paddingRight: '1%',
+                  //borderRadius: '12%'
+                }}
+              >
+              <Typography 
+                variant="h6" 
+                align="center" 
+                sx={{ 
+                  fontWeight: "bold", 
+                  fontSize: '2.4rem' 
+                }}
+              >
+                Kannur University
+              </Typography>
+            </Box> 
+          </Box>   
+          </Box>
         </Box>
-      </Box>
+      </Box>  
     </>
   );
 };
